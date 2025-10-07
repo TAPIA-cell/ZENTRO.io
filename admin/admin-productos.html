@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin - Productos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="text-center mb-4">
+      <img src="../img/logo.png" alt="Logo" width="50">
+    </div>
+    
+    <a href="admin-home.html">📊 HOME</a>
+    <a href="../tienda/index.html">🏠 Tienda</a>
+    <a href="admin-ventas.html">🧾 Ventas</a>
+    <a href="admin-productos.html">🛍️ Productos</a>
+    <a href="admin-usuarios.html">👥 Usuarios</a>
+    <a href="admin-blog.html">📝 Blogs</a>
+    <hr>
+    <div class="usuario-logueado mt-3 px-3">
+      👤 <span id="usuarioSidebar"></span>
+    </div>
+    <a href="../tienda/login.html">🚪 Cerrar Sesión</a>
+  </div>
+
+  <!-- Contenido -->
+  <div class="content">
+    <h2 class="mb-4">Gestión de Productos</h2>
+
+    <!-- FORM -->
+    <form id="formProducto" class="row g-3 mb-4">
+      <input type="hidden" id="productoId">
+
+      <div class="col-md-4">
+        <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
+      </div>
+
+      <div class="col-md-4">
+        <input type="number" id="precio" class="form-control producto-number" placeholder="Precio" required>
+      </div>
+
+      <div class="col-md-4">
+        <input type="text" id="descripcion" class="form-control" placeholder="Descripción" required>
+      </div>
+
+      <div class="col-12">
+        <div id="dropZone" class="border border-2 border-secondary rounded p-3 text-center bg-light"
+             ondrop="handleDrop(event)" ondragover="handleDragOver(event)"
+             onclick="document.getElementById('imagenes').click()">
+          Arrastra aquí las imágenes o haz clic
+          <input type="file" id="imagenes" class="d-none" accept="image/*" multiple onchange="handleFiles(this.files)">
+          <div id="preview" class="mt-2 d-flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-success">💾 Guardar</button>
+        <button type="button" class="btn btn-secondary" onclick="limpiarFormulario()">❌ Cancelar</button>
+      </div>
+    </form>
+
+    <!-- TABLE -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped shadow-sm table-fixed">
+        <thead class="table-dark">
+          <tr>
+            <th style="width: 50px;">ID</th>
+            <th style="width: 200px;">Nombre</th>
+            <th style="width: 150px;">Precio</th>
+            <th style="width: 200px;">Imagenes</th>
+            <th>Descripción</th>
+            <th style="width: 150px;">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaProductos"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/admin-home.js"></script>
+  <script src="../js/admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
