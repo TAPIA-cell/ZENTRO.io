@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Admin - Panel Principal</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  
 
   <!-- Sidebar -->
- <div class="sidebar">
-  <!-- Logo -->
-  <div class="text-center mb-4">
-    <img src="../img/logo.png" alt="Logo" width="100" >
-  </div>
+  <div class="sidebar">
+    <!-- Logo -->
+    <div class="text-center mb-4">
+      <img src="../img/logo.png" alt="Logo" width="100">
+    </div>
     
     <a href="#">📊 HOME</a>
     <a href="../tienda/index.html">🏠 Tienda</a>
@@ -24,55 +23,60 @@
     <a href="admin-usuarios.html">👥 Usuarios</a>
     <a href="admin-blog.html">📝 Blogs</a>
     <hr>
-      <div class="usuario-logueado mt-3 px-3">
-        👤 <span id="usuarioSidebar"></span>
-     </div>
+    <div class="usuario-logueado mt-3 px-3">
+      👤 <span id="usuarioSidebar"></span>
+    </div>
     <a href="../tienda/login.html">🚪 Cerrar Sesión</a>
   </div>
-<div class="content">
-  <!-- Contenido -->
-  <div class="main-content">
-    <h1>¡HOLA Administrador!</h1>
-    <div class="row g-4 mt-4">
-      <!-- Tarjetas -->
-      <div class="col-md-3">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">🛍️ Productos</h5>
-            <p id="totalProductos" class="display-6">0</p>
+
+  <!-- Contenido principal -->
+  <div class="content">
+    <div class="main-content">
+      <h1>¡HOLA Administrador!</h1>
+      <div class="row g-4 mt-4">
+        <!-- Tarjeta Productos -->
+        <div class="col-md-3">
+          <div class="card text-center shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🛍️ Productos</h5>
+              <p id="totalProductos" style="font-size:3.5rem; font-weight:bold; color:#0d6efd;">0</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-3">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">👥 Usuarios</h5>
-            <p id="totalUsuarios" class="display-6">0</p>
+        <!-- Tarjeta Usuarios -->
+        <div class="col-md-3">
+          <div class="card text-center shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">👥 Usuarios</h5>
+              <p id="totalUsuarios" style="font-size:3.5rem; font-weight:bold; color:#198754;">0</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-3">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">🧾 Ventas</h5>
-            <p id="totalVentas" class="display-6">0</p>
+        <!-- Tarjeta Ventas -->
+        <div class="col-md-3">
+          <div class="card text-center shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🧾 Ventas</h5>
+              <p id="totalVentas" style="font-size:3.5rem; font-weight:bold; color:#ffc107;">0</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-3">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">📝 Blogs</h5>
-            <p id="totalBlogs" class="display-6">0</p>
+        <!-- Tarjeta Blogs -->
+        <div class="col-md-3">
+          <div class="card text-center shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">📝 Blogs</h5>
+              <p id="totalBlogs" style="font-size:3.5rem; font-weight:bold; color:#dc3545;">0</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
   <!-- Scripts -->
   <script src="../js/main.js"></script>
   <script src="../js/logout.js"></script>
