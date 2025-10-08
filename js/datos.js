@@ -79,19 +79,11 @@ const usuariosBase = [
 const blogsBase = [
   {
     id: 1,
-    titulo: "LLego la nueva edicion de FRANKY de WUAN PISU",
-    autor: "ZENTRO",
+    titulo: "Mi primer blog",
+    autor: "Jose Tapia",
     fecha: "2025-09-23",
-    imagen: "../img/frank.webp",
-    contenido: "La llegada de esta nueva edicion tiene vuelto locos a los fanaticos de la serie de anime famosa a nivel mundial que incluso ya derroco a un pais con el lema de los piratas, esta pieza es de edicion limitada con una gran variedad de piezas y formas incluso incluye a CHOPPER la mascota de los piratas sombrero de paja.",
-  },
-  {
-    id:2,
-    titulo:"¡ATENCION! Tenemos nuevo stock de MALENIA",
-    autor:"ZENTRO",
-    fecha:"2025-10-01",
-    imagen:"../img/malenia.webp",
-    contenido:"Renovamos STOCK de MALENIA tras el increíble éxito de ventas de la ultima jornada, al agotarse inmediatamente las unidades decidimos traer mas de este maravilloso producto del famosísimo jugo de gran lore ELDEN RING",
+    imagen: "../img/Comercio.jpg",
+    contenido: "Este es el contenido de prueba de mi primer blog."
   }
 ];
 

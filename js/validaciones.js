@@ -12,28 +12,28 @@ function validarCorreo(correo) {
 // ======================
 // REGISTRO
 // ======================
-const formRegistro = document.getElementById("formRegistro");
-if (formRegistro) {
-  formRegistro.addEventListener("submit", e => {
-    e.preventDefault(); // Evitar recarga de página
+// ======================
+// VALIDACIÓN DE REGISTRO
+// ======================
 
-    const correo = document.getElementById("correo").value;
-    const pass = document.getElementById("password").value;
+function validarFormularioRegistro() {
+  const correo = document.getElementById("correo").value;
+  const pass = document.getElementById("password").value;
+  let isValid = true;
+  document.getElementById("mensajeError").textContent = ""; // Limpiar mensajes de error previos
 
-    if (!validarCorreo(correo)) {
-      // Mostrar mensaje de error si correo no es válido
-      document.getElementById("mensajeError").textContent =
-        "Correo no válido. Solo se permiten @duoc.cl, @profesor.duoc.cl y @gmail.com";
-    } else if (pass.length < 4 || pass.length > 10) {
-      // Validar longitud de contraseña
-      document.getElementById("mensajeError").textContent =
-        "La contraseña debe tener entre 4 y 10 caracteres.";
-    } else {
-      // Registro exitoso
-      alert("Registro exitoso ✅");
-      formRegistro.reset(); // Limpiar formulario
-    }
-  });
+  if (!validarCorreo(correo)) {
+    document.getElementById("mensajeError").textContent =
+      "Correo no válido. Solo se permiten @duoc.cl, @profesor.duoc.cl y @gmail.com";
+    isValid = false;
+  }
+
+  if (pass.length < 4 || pass.length > 10) {
+    document.getElementById("mensajeError").textContent =
+      "La contraseña debe tener entre 4 y 10 caracteres.";
+    isValid = false;
+  }
+  return isValid;
 }
 
 // ======================
